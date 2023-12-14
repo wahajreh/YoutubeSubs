@@ -1,0 +1,45 @@
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img style="width: 100px;" class="logo" alt="Logo" src="assets/images/channels4_profile-removebg-preview.png">
+      </a><span class="mx-3 font-weight-bold">{{'Youtube Subs For Subs'}}</span>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="#">
+          <i class="fas fa-bell"></i> <!-- Font Awesome bell icon -->
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="container mt-4">
+    <div class="mb-3">
+      <label for="username" class="form-label">Email:</label>
+      <input type="text" id="username" formControlName="username" class="form-control" />
+      <div *ngIf="loginForm.get('username')?.touched && getFormControlErrors('username').length > 0" class="text-danger">
+        <div *ngFor="let error of getFormControlErrors('username')">
+          {{ error }}
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password:</label>
+      <input type="password" id="password" formControlName="password" class="form-control" />
+      <div *ngIf="loginForm.get('username')?.touched && getFormControlErrors('password').length > 0" class="text-danger">
+        <div *ngFor="let error of getFormControlErrors('password')">
+          {{ error }}
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+    <button type="button"  class="btn btn-primary m-3"><a href="/register" style="text-decoration: none; color: wheat;">Register</a></button>
+
+  </form>
+
+  
+  
+  
